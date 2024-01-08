@@ -1,28 +1,7 @@
 [
 {
 "version":"1.0", 
-"p":"try {
-    String input = edittext1.getText().toString(); // محتوای ورودی از edittext1 گرفته شود
-
-    String[] hexStrings = input.split("\\s+");
-
-    ByteArrayOutputStream byteOutput = new ByteArrayOutputStream();
-
-    for (int i = 0; i < hexStrings.length; i++) {
-        byteOutput.write((byte) Integer.parseInt(hexStrings[i].substring(2), 16));
-    }
-
-    byte[] bytes = byteOutput.toByteArray();
-
-    String decodedString = new String(bytes, "Cp1251");
-
-    textview1.setText(decodedString); // نمایش خروجی در textview1
-
-    // بستن منبع ByteArrayOutputStream
-    byteOutput.close();
-} catch (Exception e) {
-    e.printStackTrace(); // یا هر رفتار مناسب دیگری که برنامه‌ی شما نیاز داشته باشد
-}", 
+"p":"کاربر گرامی جات خرید کانفیگ هار اختصاصی چنل ما را در تلگرام دنبال کنی", 
 "link":"https://t.me/HarvestApps"
 } 
 ] 
