@@ -6,3 +6,32 @@
 
 
 احسنت
+
+
+// مسیر فایل و پسورد ثابت
+String password = "FHGUUOFOYFTIDTID5686868FHXHXHHKFGKXGK";
+String encryptedFilePath = "openLP/001"; // مسیری که در assets دارید
+String decryptedText = null;
+
+try {
+    SecretKeySpec keySpec = FileEncryptor.generateKey(password);
+    decryptedText = FileEncryptor.decryptFileFromAssets(MainActivity.this, keySpec, encryptedFilePath);
+} catch (Exception e) {
+    e.printStackTrace();
+    ((TextView) findViewById(R.id.textviewxlop)).setText("رمزگشایی ناموفق بود");
+}
+
+// بررسی متن رمزگشایی شده
+if (decryptedText != null) {
+    int textLength = decryptedText.length(); // تعداد حروف متن رمزگشایی شده
+    int expectedLength = 10; // مقدار مورد انتظار (تغییر دهید به عدد موردنظر)
+
+    if (textLength != expectedLength) {
+        _so(); // فراخوانی متد در صورت عدم تطابق تعداد حروف
+    } else {
+        // اگر تطابق داشت، هیچ‌کاری انجام نشود یا متن رمزگشایی شده پردازش شود
+        ((TextView) findViewById(R.id.textviewxlop)).setText(decryptedText);
+    }
+} else {
+    _so(); // فراخوانی متد در صورتی که رمزگشایی موفقیت‌آمیز نبود
+}
